@@ -7,7 +7,7 @@
       <p>Password</p>
       <input type="password" id="password-input" v-model="password">
       <p>Bio</p>
-      <textarea id="bio-input" v-model="bio"></textarea>
+      <textarea rows="4" cols="50" id="bio-input" v-model="bio"></textarea>
       <p>Birthdate</p>
       <input type="text" placeholder="eg:2000-01-01" id="birthday-input" v-model="birthdate"> 
       <h2 @click="signupUser">SignUp</h2>
@@ -47,12 +47,17 @@ import axios from "axios"
                       birthdate: this.birthdate
                   }
                 }).then((response)=>{
-                    //Write logic to ensure token was sent
-                    console.log(response)
-                    cookies.set("session", response.data[0].loginToken)
-                    //Send to home page
+                    this.$store.commit("updateUser", response.data)
+                    this.loginStatus= "success";
+                    this.$router.push("/home");
+                    cookies.set("session", response.data.loginToken);
+                    console.log(response);
                 }).catch((error)=>{
-                    console.log(error)
+                    console.log(error);
+                    this.loginStatus="fail";
+                    alert("Inncorrect username and/or password.  You are now being redirected..!");
+                    this.$router.push("/Login");
+
                 })
             }
         },
@@ -61,7 +66,7 @@ import axios from "axios"
 
 <style scoped>
  #signup-background{
-    background-color: rgb(22, 140, 187);
+    background-color: #1DA1F2;
     border-radius: 10px;
     height: 500px;
     width: 100%;

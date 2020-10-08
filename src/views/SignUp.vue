@@ -2,11 +2,10 @@
    
     <div id="signuppage">
          <page-header></page-header>
-        <router-link to= "/login">Login</router-link>
-        <br>
-         <router-link to= "/update">Update</router-link>
-        <h1>signup page</h1>
+        <h1>SIGN UP</h1>
         <signup-form></signup-form>
+        <router-link to= "/login">Login</router-link> |
+         <router-link to= "/update">Update</router-link>
     </div>
 </template>
 

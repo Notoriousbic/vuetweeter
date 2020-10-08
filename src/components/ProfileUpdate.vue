@@ -5,18 +5,19 @@
       <p>Username</p>
       <input type="text" id="username-input" v-model="username">
       <p>Password</p>
-      <input type="password" id="password-input" v-model="password">
+      <input type="text" id="password-input" v-model="password">
       <p>Bio</p>
-      <textarea id="bio-input" v-model="bio"></textarea>
+      <textarea  rows="4" cols="50" id="bio-input" v-model="bio"></textarea>
       <p>Birthdate</p>
       <input type="text" placeholder="eg:2000-01-01" id="birthday-input" v-model="birthdate"> 
-      <h2 @click="signupUser">SignUp</h2>
+      <h2 @click="updateUser">Update</h2>
        
     
     </div>
 </template>
 
 <script>
+cookies.get("loginToken")
 import cookies from "vue-cookies"
 import axios from "axios"
     export default {
@@ -31,9 +32,9 @@ import axios from "axios"
             }
         },
         methods: {
-            signupUser: function(){
+            updateUser: function(){
                 axios.request({
-                  method: "POST",
+                  method: "PATCH",
                   url: "https://tweeterest.ml/api/users", 
                   headers: {
                       "Content-Type":"application/json",
@@ -44,12 +45,12 @@ import axios from "axios"
                       username: this.username,
                       password: this.password,
                       bio: this.bio,
-                      birthdate: this.birthdate
+                      birthdate: this.birthdate,
+                      loginToken: cookies.get("session")
                   }
                 }).then((response)=>{
                     //Write logic to ensure token was sent
                     console.log(response)
-                    cookies.set("session", response.data[0].loginToken)
                     //Send to home page
                 }).catch((error)=>{
                     console.log(error)
@@ -61,11 +62,13 @@ import axios from "axios"
 
 <style scoped>
  #update-background{
-    background-color: rgb(22, 140, 187);
+    /* background-color: 	#1DA1F2; */
     border-radius: 10px;
     height: 500px;
     width: 100%;
     text-align: center;
+    border: 20px solid #1DA1F2;
+
   
 }
 

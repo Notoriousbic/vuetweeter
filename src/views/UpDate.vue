@@ -2,10 +2,10 @@
    
     <div id="updatepage">
          <page-header></page-header>
+         <h1>Update Profile</h1>
          <update-form></update-form>
-        <router-link to= 
-"/login">Login</router-link>
-        <h1>Update Profile</h1>
+        <router-link to= "/login">Login</router-link>
+        
     </div>
 </template>
 
@@ -26,5 +26,6 @@ import PageHeader from "../components/header.vue"
 #updatepage{
    text-align: center;
 }
+
 
 </style>
