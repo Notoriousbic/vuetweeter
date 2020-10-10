@@ -6,8 +6,13 @@
             <p>{{comment.content}}</p>
 
         </div>
+        <div>
         <textarea v-model="content"></textarea>
-        <button @click="postComment">Post comment</button>
+        <button @click="postComment">Comment</button>
+        </div>
+        <br>
+        <br>
+       
 
     </div>
 </template>
@@ -26,7 +31,8 @@ import cookies from "vue-cookies"
         data() {
             return {
                 content: "",
-                comments: []
+                comments: [],
+                Editcontent: "",
             }
         },
         methods: {
@@ -67,8 +73,10 @@ import cookies from "vue-cookies"
                 }).catch((error)=>{
                     console.log(error)
                 })
-            }
-        }, 
+            },
+            
+        },  
+        
     }
 </script>
 

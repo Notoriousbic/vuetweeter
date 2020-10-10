@@ -15,6 +15,7 @@ import cookies from "vue-cookies"
         data() {
             return {
                 TweetContent: "",
+                EditContent: "",
             }
         },
 
@@ -44,15 +45,15 @@ import cookies from "vue-cookies"
                     this.$router.push("/Login");
 
                 })
-            }
-        },
+            }, 
+        }, 
     }
     
 </script>
 
 <style scoped>
 #create-tweet {
-    height: 200px;
+    height: 100%;
     width: 100%;
     background-color: #0B92AB;
     border-radius: 10px;

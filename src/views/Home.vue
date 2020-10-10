@@ -4,10 +4,9 @@
         <view-user></view-user>
         <view-tweets></view-tweets>
         <create-tweet></create-tweet>
-        <edit-tweet></edit-tweet>
-        <tweet-comment></tweet-comment>
-        <delete-user></delete-user>
         <all-users></all-users>
+        <delete-user></delete-user>
+       
        
 
        
@@ -20,11 +19,9 @@
 import PageHeader from "../components/header.vue"
 import CreateTweet from "../components/createtweet"
 import DeleteUser from "../components/deleteuser"
-import EditTweet from "../components/edittweet.vue"
 import ViewUser from "../components/viewuser.vue"
 import ViewTweets from "../components/viewtweets.vue"
 import AllUsers from "../components/allusers.vue"
-import TweetComment from "../components/tweetcomments.vue"
 
     export default {
         name: "home-page",
@@ -32,11 +29,9 @@ import TweetComment from "../components/tweetcomments.vue"
             PageHeader,
             DeleteUser,
             CreateTweet,
-            EditTweet,
             ViewUser,
             ViewTweets,
             AllUsers,
-            TweetComment,
         },
         
         

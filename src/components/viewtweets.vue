@@ -11,8 +11,10 @@
             <p>{{tweet.username}}</p>
             <p>{{tweet.createdAt}}</p>
             <tweet-comments :tweetId="tweet.tweetId"></tweet-comments>
-           
+        <textarea v-model="editcontent"></textarea>
+        <button @click="editTweet(tweet.tweetId)">Edit</button>
         </div>
+
         
         
 
@@ -21,6 +23,7 @@
 
 <script>
 import axios from "axios"
+import cookies from "vue-cookies"
 import TweetComments from "./comments.vue"
 
     export default {
@@ -40,6 +43,7 @@ import TweetComments from "./comments.vue"
         data: function(){
             return {
                 tweets:[],
+                editcontent:"",
             }
         },
         methods: {
@@ -87,6 +91,30 @@ import TweetComments from "./comments.vue"
                     this.$router.push("/Login");
 
                 })
+            },
+            editTweet: function(tweetId){
+                axios.request({
+                  method: "PATCH",
+                  url: "https://tweeterest.ml/api/tweets", 
+                  headers: {
+                      "Content-Type":"application/json",
+                      "X-Api-Key": "ugapNFl7L4kjy8lglmUScPyT7jkuNwTrL9vWbsCizLe7V",
+                  },
+                  data: {
+                     loginToken: cookies.get("session"),
+                     content: this.editcontent,
+                     tweetId: tweetId,
+                 }
+                }).then((response)=>{
+                    this.loginStatus= "success";
+                    console.log(response);
+                }).catch((error)=>{
+                    console.log(error);
+                    // this.loginStatus="fail";
+                    // alert("Inncorrect username and/or password.  You are now being redirected..!");
+                    // this.$router.push("/Login");
+
+                })
             }
         },
           
@@ -108,6 +136,7 @@ import TweetComments from "./comments.vue"
     border-radius: 10px;
     margin-left: 100px;
     border: solid 5px rgba(0, 0, 0, 0.733);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 </style>
