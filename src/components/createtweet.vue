@@ -54,7 +54,7 @@ import cookies from "vue-cookies"
 #create-tweet {
     height: 200px;
     width: 100%;
-    background-color: #1DA1F2;
+    background-color: #0B92AB;
     border-radius: 10px;
     text-align: center;
 }

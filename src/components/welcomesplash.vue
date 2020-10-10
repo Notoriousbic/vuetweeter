@@ -13,7 +13,7 @@
 #welcome-splash{
     height: 400px;
     width: 100%;
-    background-color: #1DA1F2;
+    background-color: #0B92AB;
     border-radius: 10px;
 
 }

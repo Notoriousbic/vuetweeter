@@ -59,7 +59,7 @@ import cookies from "vue-cookies"
 #delete-user {
     height: 175px;
     width: 100%;
-    background-color: #1DA1F2;
+    background-color: #05738C;
     text-align: center;
     border-radius: 10px;
 

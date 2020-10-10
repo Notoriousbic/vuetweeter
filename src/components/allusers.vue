@@ -3,7 +3,7 @@
         <h1>Here are the other users</h1>
         <button @click="allUsers">Show Users</button>
         <br>
-        <div>
+        <div id="show-users">
          <div v-for="user in users" :key="user.userId">{{user.username}}</div>
 
         </div>
@@ -63,9 +63,16 @@
 #all-users {
     /* height: 100%; */
     width: 100%;
-    background-color: #1DA1F2;
+    background-color: #0B92AB;
     border-radius: 10px;
     text-align: center;
+}
+#show-users{
+    height: 100%;
+    width: 65%;
+    background-color: #eff2f1;
+    border-radius: 10px;
+    margin-left: 75px;
 }
 
 

@@ -66,7 +66,7 @@ import axios from "axios"
 
 <style scoped>
  #signup-background{
-    background-color: #1DA1F2;
+    background-color: #0B92AB;
     border-radius: 10px;
     height: 500px;
     width: 100%;

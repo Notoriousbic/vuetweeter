@@ -53,8 +53,9 @@ import axios from "axios"
 #view-user {
     height: 50px;
     width: 100%;
-    background-color: #1DA1F2;
+    background-color: #0B92AB;
     border-radius: 10px;
     text-align: center;
+    
 }
 </style>

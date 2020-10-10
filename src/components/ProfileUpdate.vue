@@ -62,12 +62,12 @@ import axios from "axios"
 
 <style scoped>
  #update-background{
-    /* background-color: 	#1DA1F2; */
+    background-color: 	#0B92AB;
     border-radius: 10px;
     height: 500px;
     width: 100%;
     text-align: center;
-    border: 20px solid #1DA1F2;
+
 
   
 }

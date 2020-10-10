@@ -5,6 +5,7 @@
         <view-tweets></view-tweets>
         <create-tweet></create-tweet>
         <edit-tweet></edit-tweet>
+        <tweet-comment></tweet-comment>
         <delete-user></delete-user>
         <all-users></all-users>
        
@@ -23,6 +24,7 @@ import EditTweet from "../components/edittweet.vue"
 import ViewUser from "../components/viewuser.vue"
 import ViewTweets from "../components/viewtweets.vue"
 import AllUsers from "../components/allusers.vue"
+import TweetComment from "../components/tweetcomments.vue"
 
     export default {
         name: "home-page",
@@ -34,6 +36,7 @@ import AllUsers from "../components/allusers.vue"
             ViewUser,
             ViewTweets,
             AllUsers,
+            TweetComment,
         },
         
         
@@ -41,6 +44,7 @@ import AllUsers from "../components/allusers.vue"
 </script>
 
 <style scoped>
+
 
 
 </style>
