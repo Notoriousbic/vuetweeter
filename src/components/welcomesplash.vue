@@ -1,5 +1,7 @@
 <template>
     <div id="welcome-splash">
+          <h1>Welcome to Tweeter</h1>
+            <p>A social Media experiment!</p>
     </div>
 </template>
 

@@ -4,8 +4,17 @@
         <button @click="allUsers">Show Users</button>
         <br>
         <div id="show-users">
-         <div v-for="user in users" :key="user.userId">{{user.username}}</div>
+         <div v-for="user in users" :key="user.userId">{{user.username}}
+             <br>{{user.email}}
+              <br>{{user.bio}}
+              <br>
+              <p>---------------------</p>
+            <!-- <button>Edit Profile</button> -->
+            <router-link to="/update" tag="button">Update</router-link>
 
+              </div>
+            
+        <!-- <div v-for="user in users" :key="user.userId"></div> -->
         </div>
 
 
@@ -69,10 +78,10 @@
 }
 #show-users{
     height: 100%;
-    width: 65%;
+    width: 70%;
     background-color: #eff2f1;
     border-radius: 10px;
-    margin-left: 75px;
+    margin-left: 15%;
 }
 
 

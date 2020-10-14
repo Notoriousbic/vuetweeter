@@ -1,7 +1,8 @@
 <template>
     <div>
         <page-header></page-header>
-        <div id="welcome-splash"> <h1>This is a welome page!</h1>
+        <div id="welcome-splash"> 
+        
         </div>
         <welcome-splash></welcome-splash>
         <div id="router-links">  
